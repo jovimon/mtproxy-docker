@@ -13,7 +13,7 @@ ENV WORKERS=${WORKERS:-1}
 ARG MTPROTO_REPO_URL
 ENV MTPROTO_REPO_URL=${MTPROTO_REPO_URL:-https://github.com/TelegramMessenger/MTProxy}
 WORKDIR /srv/
-ENV TZ=Europe/Moscow
+ENV TZ=Europe/Andorra
 # Update system packages:
 RUN apt -y update > /dev/null 2>&1;\
 # Fix for select tzdata region
@@ -50,7 +50,7 @@ RUN apt -y update > /dev/null 2>&1;\
     ╚═╝     ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝ \e[0m \n\
     All is setup and done! \n\
     For access MTProxy use this link: \n\
-    \e[1;33mhttps://t.me/proxy?server=$IP_EXT&port=443&secret=$Secret\e[0m"
+    \e[1;33mhttps://t.me/proxy?server=$IP_EXT&port=8443&secret=$SECRET\e[0m"
 # Change WORKDIR
 WORKDIR /srv/MTProxy/objs/bin/
 # HEALTHCHECK
