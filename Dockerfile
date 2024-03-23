@@ -50,12 +50,12 @@ RUN apt -y update > /dev/null 2>&1;\
     ╚═╝     ╚═╝   ╚═╝   ╚═╝     ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝ \e[0m \n\
     All is setup and done! \n\
     For access MTProxy use this link: \n\
-    \e[1;33mhttps://t.me/proxy?server=$IP_EXT&port=8443&secret=$SECRET\e[0m"
+    \e[1;33mhttps://t.me/proxy?server=$IP_EXT&port=2024&secret=$SECRET\e[0m"
 # Change WORKDIR
 WORKDIR /srv/MTProxy/objs/bin/
 # HEALTHCHECK
 HEALTHCHECK --interval=60s --timeout=30s --start-period=10s CMD curl -f http://localhost:8888/stats || exit 1
 # Expose Ports:
-EXPOSE 8889/tcp 8889/udp
+EXPOSE 2024/tcp 2024/udp
 # ENTRYPOINT
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
